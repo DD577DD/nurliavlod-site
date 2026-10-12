@@ -474,3 +474,8 @@ footer{background:var(--deep);color:rgba(255,255,255,.75);padding:34px 0}
 #live .more-btn{margin:34px auto 0}
 
 .live-views{display:flex;align-items:center;gap:6px;color:var(--ink2);font-size:.88rem;margin-top:6px}.live-views .ico{color:var(--coral)}.live-views b{color:var(--ink)}
+
+/* ikki telefon raqami bitta kartada */
+.phones a{display:block;width:fit-content;transition:color .25s}
+.phones a:hover{color:var(--coral)}
+.phones a+a{margin-top:2px}
