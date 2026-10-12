@@ -1,5 +1,5 @@
 /* ---------- links & schedule: edit here ---------- */
-const TG_URL = 'https://t.me/Nurli_avlod_kanal';
+const TG_URL = 'https://t.me/NurliAvlod_Chat';
 const IG_URL = 'https://www.instagram.com/nurliavlod_mtt';
 /* day 1 = Monday ... 7 = Sunday, minutes from midnight (Termiz time) */
 const SCH = {1:[450,1080],2:[450,1080],3:[450,1080],4:[450,1080],5:[450,1080],6:[450,840],7:null};

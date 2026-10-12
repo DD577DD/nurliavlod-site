@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nurli Avlod — Havolalar</title>
+<meta name="description" content="Nurli Avlod Bolalar Bog'chasi, Termiz — telefon, Telegram, Instagram, manzil va sharhlar bitta sahifada.">
+<meta name="theme-color" content="#08293a">
+<meta property="og:title" content="Nurli Avlod Bolalar Bog'chasi — Termiz">
+<meta property="og:description" content="Bog'cha bilan bog'lanish: telefon, Telegram, Instagram, manzil va sharhlar.">
+<meta property="og:image" content="assets/poster.jpg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#08293a; --deep2:#0d3f58; --ink:#0c2230; --ink2:#506676;
+  --coral:#ff6a4a; --sun:#ffc233; --mint:#2fc7a1; --blue:#3aa6ff;
+  --head:'Manrope','Onest',system-ui,sans-serif;
+  --body:'Onest','Manrope',system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--body);color:#fff;min-height:100svh;
+  background:
+    radial-gradient(900px 520px at 85% -10%,rgba(58,166,255,.32),transparent 60%),
+    radial-gradient(700px 480px at -10% 30%,rgba(47,199,161,.22),transparent 60%),
+    radial-gradient(800px 520px at 100% 100%,rgba(255,106,74,.22),transparent 60%),
+    var(--deep);
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.ico{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* floating blobs */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg i{position:absolute;border-radius:50%;opacity:.16;animation:float var(--t,16s) ease-in-out infinite;animation-delay:var(--d,0s)}
+.bg i:nth-child(1){left:6%;top:14%;width:46px;height:46px;background:var(--coral)}
+.bg i:nth-child(2){left:88%;top:10%;width:30px;height:30px;background:var(--sun);--t:12s;--d:-3s}
+.bg i:nth-child(3){left:80%;top:56%;width:64px;height:64px;background:var(--blue);--t:19s;--d:-6s}
+.bg i:nth-child(4){left:10%;top:74%;width:36px;height:36px;background:var(--mint);--t:13s;--d:-2s}
+.bg i:nth-child(5){left:50%;top:92%;width:54px;height:54px;background:var(--sun);--t:17s;--d:-8s}
+.bg i:nth-child(6){left:92%;top:86%;width:26px;height:26px;background:var(--coral);--t:15s;--d:-9s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-26px) rotate(14deg)}}
+
+.page{position:relative;z-index:1;width:min(100%,520px);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 16px max(28px,env(safe-area-inset-bottom))}
+
+/* top bar */
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.lang{display:flex;gap:2px;padding:4px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(8px)}
+.lang button{border:0;background:transparent;color:rgba(255,255,255,.75);font:700 .78rem var(--body);letter-spacing:.04em;padding:7px 13px;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
+.lang button.on{background:#fff;color:var(--deep)}
+.share{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.1);color:#fff;font-size:18px;cursor:pointer;backdrop-filter:blur(8px);transition:transform .3s var(--ease),background .3s}
+.share:hover{transform:scale(1.08);background:rgba(255,255,255,.18)}
+
+/* profile */
+.profile{text-align:center;padding:14px 0 22px}
+.logo{width:156px;height:auto;margin:0 auto 6px;display:block;filter:drop-shadow(0 18px 24px rgba(0,0,0,.35));animation:pop .9s var(--ease) both}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.9)}to{opacity:1;transform:none}}
+h1{font-family:var(--head);font-weight:800;font-size:1.6rem;letter-spacing:-.025em;line-height:1.1;margin-top:8px}
+.sub{color:rgba(255,255,255,.72);font-size:.95rem;margin-top:8px;line-height:1.5}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:8px 15px;border-radius:999px;font-size:.84rem;font-weight:600;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14)}
+.status .dot{width:9px;height:9px;border-radius:50%;background:#9aa9b4}
+.status.open .dot{background:var(--mint);box-shadow:0 0 0 0 rgba(47,199,161,.7);animation:pulse 2s infinite}
+.status.closed .dot{background:var(--coral)}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(47,199,161,0)}100%{box-shadow:0 0 0 0 rgba(47,199,161,0)}}
+
+/* link cards */
+.links{display:flex;flex-direction:column;gap:12px}
+.card{
+  display:flex;align-items:center;gap:15px;padding:13px 18px 13px 13px;border-radius:24px;
+  background:rgba(255,255,255,.97);color:var(--ink);
+  box-shadow:0 18px 38px -22px rgba(0,0,0,.7);
+  transition:transform .35s var(--ease),box-shadow .35s;
+  opacity:0;animation:rise .7s var(--ease) forwards;animation-delay:calc(.18s + var(--n)*.07s);
+  -webkit-tap-highlight-color:transparent;
+}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.card:hover{transform:translateY(-3px);box-shadow:0 26px 44px -22px rgba(0,0,0,.8)}
+.card:active{transform:scale(.985)}
+.ci{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;font-size:25px;color:#fff;flex:none;transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+.card:hover .ci{transform:rotate(-8deg) scale(1.08)}
+.c-coral{background:linear-gradient(135deg,#ff8a6b,#f2473a)}
+.c-blue{background:linear-gradient(135deg,#4cb5ff,#1a74e8)}
+.c-ig{background:linear-gradient(135deg,#ff6f9a,#b02f96)}
+.c-mint{background:linear-gradient(135deg,#43dcb6,#1ea383)}
+.c-sun{background:linear-gradient(135deg,#ffd35c,#f29b12)}
+.c-deep{background:linear-gradient(135deg,#1c6b92,#08293a)}
+.txt{flex:1;min-width:0}
+.txt b{display:block;font-family:var(--head);font-weight:800;font-size:1.04rem;letter-spacing:-.01em;line-height:1.2}
+.txt small{display:block;color:var(--ink2);font-size:.84rem;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.go{font-size:19px;color:var(--ink2);opacity:.55;transition:transform .3s var(--ease),opacity .3s}
+.card:hover .go{transform:translateX(4px);opacity:1}
+.card.main{background:var(--coral);color:#fff;box-shadow:0 20px 40px -16px var(--coral)}
+.card.main .txt small{color:rgba(255,255,255,.88)}
+.card.main .go{color:#fff;opacity:.9}
+.card.main .ci{background:rgba(255,255,255,.22)}
+
+/* hours */
+.hours{margin-top:22px;padding:16px 20px;border-radius:24px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);backdrop-filter:blur(8px);opacity:0;animation:rise .7s var(--ease) .95s forwards}
+.hours h2{font-family:var(--head);font-weight:800;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sun);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.hours ul{list-style:none;display:grid;gap:7px;font-size:.92rem}
+.hours li{display:flex;justify-content:space-between;gap:12px;color:rgba(255,255,255,.82)}
+.hours li b{font-weight:700;color:#fff;font-variant-numeric:tabular-nums}
+.hours li.today{color:#fff}
+.hours li.today span::after{content:"•";color:var(--mint);margin-left:7px}
+
+footer{text-align:center;margin-top:24px;font-size:.78rem;color:rgba(255,255,255,.5)}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);background:#fff;color:var(--ink);padding:11px 20px;border-radius:999px;font-weight:600;font-size:.9rem;box-shadow:0 14px 34px -10px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:.4s var(--ease);z-index:5}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0s!important;transition:none!important}.card,.hours,.logo{opacity:1}}
+@media (min-width:600px){.page{padding-top:40px}.logo{width:180px}h1{font-size:1.85rem}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></symbol>
+<symbol id="i-insta" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+<symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></symbol>
+</defs></svg>
+
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<main class="page">
+  <div class="top">
+    <div class="lang" role="group" aria-label="Language">
+      <button data-l="uz" class="on">UZ</button><button data-l="ru">RU</button><button data-l="en">EN</button>
+    </div>
+    <button class="share" id="share" aria-label="Share"><svg class="ico"><use href="#i-share"/></svg></button>
+  </div>
+
+  <header class="profile">
+    <img class="logo" src="assets/logo.png" alt="Nurli Avlod" width="180" height="128">
+    <h1>Nurli Avlod</h1>
+    <p class="sub" data-i="sub">Bolalar bog'chasi · Termiz<br>1,5 yoshdan 7 yoshgacha</p>
+    <div class="status" id="status"><span class="dot"></span><span id="status-t">…</span></div>
+  </header>
+
+  <nav class="links" aria-label="Links">
+    <a class="card main" style="--n:0" href="tel:+998915792400">
+      <span class="ci"><svg class="ico"><use href="#i-phone"/></svg></span>
+      <span class="txt"><b data-i="call">Qo'ng'iroq qilish</b><small>+998 91 579 24 00</small></span>
+      <svg class="ico go"><use href="#i-arrow"/></svg>
+    </a>
+    <a class="card main" style="--n:1" href="tel:+998992882400">
+      <span class="ci"><svg class="ico"><use href="#i-phone"/></svg></span>
+      <span class="txt"><b data-i="call">Qo'ng'iroq qilish</b><small>+998 99 288 24 00</small></span>
+      <svg class="ico go"><use href="#i-arrow"/></svg>
+    </a>
+    <a class="card" style="--n:2" target="_blank" rel="noopener" href="https://t.me/NurliAvlod_Chat">
+      <span class="ci c-blue"><svg class="ico"><use href="#i-send"/></svg></span>
+      <span class="txt"><b>Telegram</b><small data-i="tg">Kanalimiz va yangiliklar</small></span>
+      <svg class="ico go"><use href="#i-arrow"/></svg>
+    </a>
+    <a class="card" style="--n:3" target="_blank" rel="noopener" href="https://www.instagram.com/nurliavlod_mtt">
+      <span class="ci c-ig"><svg class="ico"><use href="#i-insta"/></svg></span>
+      <span class="txt"><b>Instagram</b><small>@nurliavlod_mtt</small></span>
+      <svg class="ico go"><use href="#i-arrow"/></svg>
+    </a>
+    <a class="card" style="--n:4" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nurli+Avlod+Bolalar+Bog%27chasi+Termiz">
+      <span class="ci c-coral"><svg class="ico"><use href="#i-pin"/></svg></span>
+      <span class="txt"><b data-i="addr">Manzil — xaritada</b><small data-i="addr_s">Farovon massivi, 1-mavze, 4 «B»-uy</small></span>
+      <svg class="ico go"><use href="#i-arrow"/></svg>
+    </a>
+    <a class="card" style="--n:5" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nurli+Avlod+Bolalar+Bog%27chasi+Termiz">
+      <span class="ci c-sun"><svg class="ico"><use href="#i-star"/></svg></span>
+      <span class="txt"><b data-i="rev">Ota-onalar sharhlari</b><small data-i="rev_s">Google Maps'da sharhlar</small></span>
+      <svg class="ico go"><use href="#i-arrow"/></svg>
+    </a>
+    <a class="card" style="--n:6" href="index.html">
+      <span class="ci c-mint"><svg class="ico"><use href="#i-globe"/></svg></span>
+      <span class="txt"><b data-i="site">Bog'cha veb-sayti</b><small data-i="site_s">To'garaklar, galereya va boshqalar</small></span>
+      <svg class="ico go"><use href="#i-arrow"/></svg>
+    </a>
+  </nav>
+
+  <section class="hours" aria-labelledby="hh">
+    <h2 id="hh"><svg class="ico"><use href="#i-clock"/></svg><span data-i="hh">Ish vaqti</span></h2>
+    <ul>
+      <li data-d="1-5"><span data-i="d15">Dushanba – Juma</span><b>7:30 – 18:00</b></li>
+      <li data-d="6"><span data-i="d6">Shanba</span><b>7:30 – 14:00</b></li>
+      <li data-d="0"><span data-i="d0">Yakshanba</span><b data-i="off">Dam olish</b></li>
+    </ul>
+  </section>
+
+  <footer>© Nurli Avlod · Termiz</footer>
+</main>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const T={
+uz:{sub:"Bolalar bog'chasi · Termiz<br>1,5 yoshdan 7 yoshgacha",call:"Qo'ng'iroq qilish",tg:"Kanalimiz va yangiliklar",addr:"Manzil — xaritada",addr_s:"Farovon massivi, 1-mavze, 4 «B»-uy",rev:"Ota-onalar sharhlari",rev_s:"Google Maps'da sharhlar",site:"Bog'cha veb-sayti",site_s:"To'garaklar, galereya va boshqalar",hh:"Ish vaqti",d15:"Dushanba – Juma",d6:"Shanba",d0:"Yakshanba",off:"Dam olish",open:"Hozir ochiq",closed:"Hozir yopiq",copied:"Havola nusxalandi"},
+ru:{sub:"Детский сад · Термез<br>от 1,5 до 7 лет",call:"Позвонить",tg:"Наш канал и новости",addr:"Адрес — на карте",addr_s:"массив Фарован, 1-й квартал, дом 4 «Б»",rev:"Отзывы родителей",rev_s:"Отзывы на Google Maps",site:"Сайт детского сада",site_s:"Кружки, галерея и многое другое",hh:"Режим работы",d15:"Понедельник – Пятница",d6:"Суббота",d0:"Воскресенье",off:"Выходной",open:"Сейчас открыто",closed:"Сейчас закрыто",copied:"Ссылка скопирована"},
+en:{sub:"Kindergarten · Termez<br>Ages 1.5 to 7",call:"Call us",tg:"Our channel and news",addr:"Address — on the map",addr_s:"Farovon district, block 1, building 4 «B»",rev:"Parent reviews",rev_s:"Reviews on Google Maps",site:"Kindergarten website",site_s:"Clubs, gallery and more",hh:"Opening hours",d15:"Monday – Friday",d6:"Saturday",d0:"Sunday",off:"Closed",open:"Open now",closed:"Closed now",copied:"Link copied"}
+};
+let LANG='uz';
+try{LANG=localStorage.getItem('lang')||'uz'}catch(e){}
+if(!T[LANG])LANG='uz';
+
+/* Termiz vaqti (UTC+5) bo'yicha hozir ochiqmi */
+function nowTermez(){
+  const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tashkent',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const g=t=>p.find(x=>x.type===t).value;
+  return {dow:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),min:(+g('hour')%24)*60+ +g('minute')};
+}
+function render(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll('[data-i]').forEach(el=>{const v=T[LANG][el.dataset.i]; if(v!==undefined) el.innerHTML=v});
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===LANG));
+  const n=nowTermez(), end=n.dow>=1&&n.dow<=5?18*60:n.dow===6?14*60:0;
+  const open=end>0&&n.min>=7*60+30&&n.min<end;
+  const st=document.getElementById('status');
+  st.className='status '+(open?'open':'closed');
+  document.getElementById('status-t').textContent=T[LANG][open?'open':'closed'];
+  document.querySelectorAll('.hours li').forEach(li=>{
+    const d=li.dataset.d; li.classList.toggle('today',d==='1-5'?(n.dow>=1&&n.dow<=5):+d===n.dow);
+  });
+}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{LANG=b.dataset.l;try{localStorage.setItem('lang',LANG)}catch(e){};render()});
+render(); setInterval(render,60000);
+
+/* ulashish */
+const toast=document.getElementById('toast');
+function say(t){toast.textContent=t;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2000)}
+document.getElementById('share').onclick=async()=>{
+  const data={title:'Nurli Avlod',text:"Nurli Avlod Bolalar Bog'chasi — Termiz",url:location.href};
+  try{ if(navigator.share){await navigator.share(data);return} }catch(e){ if(e&&e.name==='AbortError')return }
+  try{await navigator.clipboard.writeText(location.href);say(T[LANG].copied)}catch(e){prompt('',location.href)}
+};
+</script>
+</body>
+</html>
